@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+<title>test</title>
+<script type="text/javascript">
+function post_submit()
+{
+	document.getElementById( "mainform" ).method = "post";
+	document.getElementById( "mainform" ).submit();
+}
+ 
+function get_submit()
+{
+	document.getElementById( "mainform" ).method = "get";
+	document.getElementById( "mainform" ).submit();
+}
+</script>
+</head>
+<body>
+<div class="editView">
+<form id="mainform" method="post" action="../cgi-bin/printenv.cgi" enctype="multipart/form-data">
+	<fieldset class="">
+		<legend>测试页面</legend>
+		<dl class="nowrap">
+			<dd>
+				<span>名称</span>:
+				<input id="name" name="name" type="text" value="ldapserver_name">
+				<span>IP</span>:
+				<input id="ip" name="ip" type="text">
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dd>
+				<span>复选框1</span>:
+				<input id="checkbox1" name="checkbox1" type="checkbox" checked/>
+				<span>    复选框1</span>:
+				<input id="checkbox2" name="checkbox2" type="checkbox" />
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dd>
+				<label for="radiotest1">单选按钮1</label>
+				<input name="radiotest" id="radiotest1" type="radio" value="1"/>
+				<label for="radiotest2">  单选按钮2</label>
+				<input name="radiotest" id="radiotest2" type="radio" value="2" checked/>
+				<label for="radiotest3">  单选按钮3</label>
+				<input name="radiotest" id="radiotest3" type="radio" value="3"/>
+			</dd>
+		</dl>
+		<dl class="nowrap" id="dl_ca">
+			<dd>
+				<span>上传文件</span>
+				<input class="" name="uploadfile" id="uploadfile" type="file"/>
+			</dd>
+		</dl>
+		<dl class="nowrap">
+			<dd><span>下拉框</span>:
+				<select name="dropbox" id="dropbox">
+					<option value="3">3</option>
+					<option value="2">2</option>
+				</select>
+			</dd>
+		</dl>
+	</fieldset>
+	<fieldset class="btnfield">
+		<dl class="nowrap">
+			<dt> </dt>
+			<dd>
+				<a id="submit" href="javascript:;" value="Submit" οnclick="javascript: post_submit();">post提交</a>
+				  <a id="submit" href="javascript:;" value="Submit" οnclick="javascript: get_submit();">get提交</a>
+				  <a href="javascript:;">取消</a>
+			</dd>
+		</dl>
+	</fieldset>
+</form>
+</div>
+</body>
+</html>
